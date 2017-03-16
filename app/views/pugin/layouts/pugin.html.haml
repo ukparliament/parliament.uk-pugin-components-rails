@@ -5,18 +5,18 @@
     %link{rel: 'stylesheet', href: "#{Rails.application.secrets.asset_location_url}/#{Rails.application.secrets.asset_version}/stylesheets/main.css" }
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
     %meta{'http-equiv': 'X-UA-Compatible', content: 'IE=edge'}
-    = favicon_link_tag 'pugin/favicon.ico'
+    = favicon_link_tag "#{Rails.application.secrets.asset_location_url}/#{Rails.application.secrets.asset_version}/images/favicon.ico"
     - if Rails.application.secrets.gtm_key
       = render partial: 'pugin/javascript/google_tag_manager'
   %body.no-js
     - if Rails.application.secrets.gtm_key
       = render partial: 'pugin/javascript/google_tag_manager_noscript'
     = render partial: 'pugin/elements/skip-content'
-    = render 'pugin/components/header'
+    = render partial: 'pugin/components/header'
     = render partial: 'pugin/components/status', locals: { status: nil }
     %main#content
       .container--full-grid
         .row--indent-full
           = yield
-    = render 'pugin/components/footer'
+    = render partial: 'pugin/components/footer'
     %script{src: "#{Rails.application.secrets.asset_location_url}/#{Rails.application.secrets.asset_version}/javascripts/main.js"}

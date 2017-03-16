@@ -3,7 +3,7 @@
     - if person.respond_to?(:graph_id)
       %li.list__item
         %h2
-          %a{:href => "/people/#{person.graph_id}"}= person.display_name
+          =link_to(person.display_name, person_path(person.graph_id))
         - if !person.statuses[:house_membership_status].empty? && !person.statuses[:house_membership_status].include?('Current MP')
           %p= person.statuses[:house_membership_status].join(' and ')
 

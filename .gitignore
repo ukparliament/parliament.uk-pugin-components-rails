@@ -8,4 +8,5 @@ spec/dummy/tmp/
 
 coverage
 .idea
+.vscode
 node_modules/

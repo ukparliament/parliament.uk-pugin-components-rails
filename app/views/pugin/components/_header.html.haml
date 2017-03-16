@@ -4,4 +4,4 @@
       .row--indent-horizontal
         .header__logo
           %span
-            %a{:href => "/"}= t('parliament_header')
+            =link_to( t('parliament_header'), root_path() )
