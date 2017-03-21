@@ -33,7 +33,7 @@
 ## Installation
 Within your rails application, add the below to your `Gemfile`.
 ```bash
-gem 'pugin', git: 'https://github.com/ukparliament/parliament.uk-pugin-components-rails', branch: 'master'
+gem 'pugin', '~> 0.3'
 ```
 
 
