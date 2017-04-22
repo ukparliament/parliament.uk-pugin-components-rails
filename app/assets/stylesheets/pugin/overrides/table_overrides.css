@@ -1,0 +1,35 @@
+tbody tr td, thead tr th {
+    border: none;
+}
+
+table {
+    background: #fff;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 8px;
+}
+
+thead {
+    border-bottom: 2px solid #000;
+}
+
+thead tr th {
+    background: #fff;
+    text-align: left;
+}
+
+thead tr th:nth-child(even) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 0;
+}
