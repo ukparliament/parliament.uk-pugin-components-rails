@@ -20,6 +20,12 @@ en:
         aria_label: "Paged navigation"
         select_letter: "select a letter"
         showing_results: "Showing results for"
+      menu:
+        navigation: "navigation"
+        mps: "MPs"
+        lords: "Lords"
+        parties: "Parties"
+        constituencies: "Constituencies"
     people:
         list:
           member:
