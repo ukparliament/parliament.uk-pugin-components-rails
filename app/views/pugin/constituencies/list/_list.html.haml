@@ -20,5 +20,5 @@
         %p= I18n.t('pugin.constituencies.list.current_constituency.vacant').capitalize
     - else
       %h2
-        %a{:href => "/constituencies/#{constituencies.graph_id}"}= constituencies.name
+        %a{:href => "/constituencies/#{constituencies.graph_id}"}= "#{constituencies.name} (#{l(constituencies.start_date, format: :year_only)} - #{l(constituencies.end_date, format: :year_only)})"
       %p= "#{t('pugin.constituencies.list.former_constituency.former').capitalize} #{t('pugin.constituencies.list.former_constituency.constituency')}"

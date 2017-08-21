@@ -78,12 +78,15 @@ describe 'pugin/constituencies/list/_list.html.haml', type: :view do
       allow(constituency).to receive(:current?).and_return(false)
       allow(constituency).to receive(:name).and_return('Aberavon')
       allow(constituency).to receive(:graph_id).and_return('123')
+      allow(constituency).to receive(:start_date).and_return(DateTime.new(1929))
+      allow(constituency).to receive(:end_date).and_return(DateTime.new(1950))
+
       @constituencies = [constituency]
     end
 
     it 'displays the previous constituency i18n message' do
       render partial: "pugin/constituencies/list/list", collection: @constituencies, as: "constituencies".to_sym
-      expect(response).to include("<h2>\n<a href='/constituencies/123'>Aberavon</a>\n</h2>")
+      expect(response).to include("<h2>\n<a href='/constituencies/123'>Aberavon (1929 - 1950)</a>\n</h2>")
       expect(response).to include("<p>Former constituency</p>")
     end
   end
