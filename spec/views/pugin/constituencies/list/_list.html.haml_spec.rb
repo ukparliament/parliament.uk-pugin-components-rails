@@ -9,9 +9,8 @@ describe 'pugin/constituencies/list/_list.html.haml', type: :view do
       constituency = Class.new
       members = Class.new
       party = Class.new
-      allow(members).to receive(:display_name).and_return('Test Name')
-      allow(members).to receive(:current_party).and_return(party)
-      allow(party).to receive(:name).and_return('Test Party')
+      allow(constituency).to receive(:current_member_display_name).and_return('Test Name')
+      allow(constituency).to receive(:current_member_party_name).and_return('Test Party')
       allow(constituency).to receive(:current?).and_return(true)
       allow(constituency).to receive(:name).and_return('Aberavon')
       allow(constituency).to receive(:graph_id).and_return('123')
@@ -30,9 +29,8 @@ describe 'pugin/constituencies/list/_list.html.haml', type: :view do
         constituency = Class.new
         members = Class.new
         party = Class.new
-        allow(members).to receive(:display_name).and_return('Test Name')
-        allow(members).to receive(:current_party).and_return(party)
-        allow(party).to receive(:name).and_return('Test Party')
+        allow(constituency).to receive(:current_member_display_name).and_return('Test Name')
+        allow(constituency).to receive(:current_member_party_name).and_return('Test Party')
         allow(constituency).to receive(:members).and_return([members])
         allow(constituency).to receive(:current?).and_return(true)
         allow(constituency).to receive(:name).and_return('Aberavon')
