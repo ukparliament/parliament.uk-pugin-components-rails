@@ -10,21 +10,10 @@
           %img{ src: "#{Pugin::ASSET_LOCATION_URL}/#{Pugin::ASSET_VERSION}/images/placeholder_members_image.png", alt: "" }
 
 .list--details
-  - if !instance_variable_get("@parliament").nil? # parliament member
-    %h2
-      %a{href: "/people/#{member.graph_id}"}= member.display_name
-    - unless member.constituencies.empty?
-      - unless member.seat_incumbencies.nil?
-        - member.seat_incumbencies.each do |seat_incumbency|
-          %p
-            = "#{seat_incumbency.constituency.name} from #{l(seat_incumbency.start_date, format: :default)}"
-            = seat_incumbency.end_date.nil? ? "#{I18n.t('shared.to_present')}" : "- #{l(seat_incumbency.end_date, format: :default)}"
+  -# - if !instance_variable_get("@parliament").nil? # parliament member
+    -# TODO: Implement once it's understood what we want to show, e.g. constituency/party for a specific parliamentary period   
 
-    - unless member.parties.empty?
-      - member.party_memberships.each do |party_membership|
-        %p= party_membership.party.name
-
-  - elsif !current_incumbency.nil? # current member
+  - if !current_incumbency.nil? # current member
     %h2
       %a{href: "/people/#{member.graph_id}"}= member.display_name
     - unless member.constituencies.empty?
@@ -37,7 +26,6 @@
         %p= party_membership.party.name
 
   - else # former member
-
     %h2
       %a{href: "/people/#{member.graph_id}"}= member.display_name
     - unless member.statuses[:house_membership_status].empty? && !member.statuses[:house_membership_status].include?('Current MP')
