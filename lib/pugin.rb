@@ -2,7 +2,7 @@ require 'pugin/version'
 
 module Pugin
   ASSET_VERSION = '1.9.1'.freeze
-  ASSET_LOCATION_URL = ENV.fetch('ASSET_LOCATION_URL', 'https://static.parliament.uk/pugin')]
+  ASSET_LOCATION_URL = ENV.fetch('ASSET_LOCATION_URL', 'https://static.parliament.uk/pugin')
   STATIC_ASSET_LOCATION_URL = ENV.fetch('STATIC_ASSET_LOCATION_URL', 'https://s3-eu-west-1.amazonaws.com/web1live.static-assets')
   STATIC_ASSET_PUBLIC_LOCATION_URL = ENV.fetch('STATIC_ASSET_PUBLIC_LOCATION_URL', 'https://static.parliament.uk/assets-public')
   class << self
